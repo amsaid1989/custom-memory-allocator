@@ -1,5 +1,5 @@
 CC=clang
-CFLAGS=-g -Wall -Werror -pedantic
+CFLAGS=-g -Wall -Wextra -Werror -pedantic
 SRC=*.c
 OUT=main
 

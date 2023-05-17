@@ -6,13 +6,16 @@
 #define BUF_SIZE 10 * 1024 * 1024
 
 i32 main(void) {
-  allocator_t *alloc = init_allocator(BUF_SIZE);
+  allocator_t *allocator = init_allocator(BUF_SIZE);
 
-  if (!alloc) {
+  if (!allocator) {
     return EXIT_FAILURE;
   }
 
-  deinit_allocator(&alloc);
+  i32 *num = (i32 *)allocate(allocator, sizeof(i32));
+  *num = 25;
+
+  deinit_allocator(&allocator);
 
   return EXIT_SUCCESS;
 }
